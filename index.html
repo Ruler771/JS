@@ -1,26 +1,39 @@
-<script>
-    var number = prompt("введите число от 0 до 999")
-    var object = {}
-
-    function addNumber(number) {
-        var num = number.split('')
-        if (num.length > 3) {
-            console.log("Слишком большое число");
-            return 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изображение</title>
+    <style>
+        div img {
+            float: left;
         }
-        if (num[0]) {
-            object.единиц = num[0]
+    </style>
+</head>
+<body>
+    <div><img id="b1" src="img/1.png" alt="">
+    <img id="b2" src="img/2.jpg" alt="">
+    <img id="b3" src="img/3.jpg" alt=""></div>
+    <div style="clear: both"></div>
+    <img id="img" src="" alt="">
+    <div id="div"></div>
+    <script>
+    var b1 = document.getElementById("b1");
+    var img = document.getElementById("img");
+    var div = document.getElementById("div");
+    b1.onclick = f;
+        function f(){
+           img.src = "img/1-b.png";
         }
-        if (num[0] && num[1]) {
-            object.единиц = num[1]
-            object.десяток = num[0]
+    b2.onclick = d;
+        function d(){
+           img.src = "img/2-b.jpg";
         }
-        if (num[0] && num[1] && num[2]) {
-            object.единиц = num[2]
-            object.десяток = num[1]
-            object.соток = num[0]
+    b3.onclick = s;
+        function s(){
+          alert("Нету фотки");
+          div.innerHTML = "Нету фотки";
+          img.src = "";
         }
-    }
-    addNumber(number)
-    console.log(object)
-</script>
+    </script>
+</body>
+</html>
